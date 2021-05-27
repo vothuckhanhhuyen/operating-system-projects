@@ -8,6 +8,7 @@ TinyShell is a basic shell written in C++ programming language. The way it works
 + Understand how to set and how shell works
 
 ## Contribute
+Class: Talented in Computer Science - K64
 + Trần Trọng Hiệp
 + Tạ Hữu Bình
 + Lê Huy Hoàng

@@ -19,4 +19,4 @@ Class: Talented in Computer Science - K64
 2. [Readers Writers](https://github.com/vothuckhanhhuyen/OSProject/tree/master/P02_Semaphore/02ReadersWriters)
 3. [No Starve Mutex](https://github.com/vothuckhanhhuyen/OSProject/tree/master/P02_Semaphore/03NoStarveMutex)
 4. [Dining Philosophers](https://github.com/vothuckhanhhuyen/OSProject/tree/master/P02_Semaphore/04DiningPhilosophers)
-5. [CigaretteSmoker](https://github.com/vothuckhanhhuyen/OSProject/tree/master/P02_Semaphore/05CigaretteSmoker)
+5. [Cigarette Smoker](https://github.com/vothuckhanhhuyen/OSProject/tree/master/P02_Semaphore/05CigaretteSmoker)

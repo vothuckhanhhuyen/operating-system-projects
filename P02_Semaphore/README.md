@@ -8,6 +8,7 @@ Semaphore is a data structure that is useful for solving a variety of synchroniz
 + Understand how Semaphore works and its benefits in managing shared resources
 
 ## Contribute
+Class: Talented in Computer Science - K64
 + Trần Trọng Hiệp
 + Tạ Hữu Bình
 + Lê Huy Hoàng

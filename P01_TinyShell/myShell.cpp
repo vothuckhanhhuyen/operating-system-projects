@@ -10,10 +10,8 @@
 #include <processthreadsapi.h>
 #include <fstream>
 #include "bibrary.h"
-#include "currentDir.h"
 #include "messenger.h"
 #include "concurentCommandBuilder.h"
-
 
 using namespace std;
 
@@ -116,10 +114,10 @@ void runable(string command)
         system("cls");
     }
 
-    else if (command.length() > 4 && command[0] == 'c' && command[1] == 'd' && command[2] == ' ')
+    else if (command.length() >= 4 && command[0] == 'c' && command[1] == 'd' && command[2] == ' ')
     {
         string s = "";
-        for (int i = 3; i <= command.length(); ++i)
+        for (int i = 3; i < command.length(); ++i)
         {
             s += command[i];
         }
@@ -229,14 +227,16 @@ void run(string command)
         runable(trim(jobs[i]));
     }
 }
+
 int main()
 {
     WELCOME();
     string command;
     while (true)
     {
-        
-        cout << "> ";
+    	char *buffer = _getcwd(NULL, 0);
+    	printf("%s", buffer);
+        cout << ">";
         getline(cin, command);
         trim(command);
         if (command == EXIT_COMMAND)
@@ -254,6 +254,7 @@ int main()
     }
     
 }
+
 void time1()
 {
     int sec_prev=0; 

@@ -204,6 +204,7 @@ void resume(string s)
         printf("Can't find process with this id = %d\n", id);
     }
 }
+
 void openInBackOrFore(const string &command, const string &s)
 {
     void openProcessInForeGround(const string &s);
@@ -355,15 +356,12 @@ void list1()
 
 void cd(string s)
 {
+	char dir[100];
     LPSTR cString = strdup(s.c_str()); // pass your path in the function
     int ch = chdir(cString);           // if the change of directory was successful it will print successful otherwise it will print not successful
     if (ch < 0)
-    {
+    {	
         openInBackOrFore("path back", cString);
-    }
-    else
-    {
-        printf("chdir change of directory successful!\n");
     }
 }
 

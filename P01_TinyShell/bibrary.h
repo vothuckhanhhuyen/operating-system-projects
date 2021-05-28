@@ -398,7 +398,7 @@ void runExe(string command)
     }
     else if (c2.compare("fore") == 0)
     {
-        openProcessInForeGround(c2);
+        openProcessInForeGround(c1);
     }
     else
     {

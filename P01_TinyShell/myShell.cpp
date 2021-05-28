@@ -19,6 +19,7 @@ using namespace std;
 
 const string EXIT_COMMAND = "exit";
 string currentDirectory;
+vector<string> history;
 
 void runable(string command)
 {
@@ -31,12 +32,32 @@ void runable(string command)
         help();
     }
 
+    else if (command.compare("history") == 0)
+    {
+        int i = 0;
+        for (string s: history){
+            if (s != "history"){
+                i++;
+                cout << i << ". "<< s << endl;
+            }
+        }
+        if (i == 0)
+            cout << "Empty history!" << endl;
+    }
+
+    else if (command.compare("clean") == 0)
+    {
+        history.clear();
+        cout << "Your history has been cleaned thoroughly!" << endl;
+    }
+
     else if (command.compare("exit") == 0)
     {
         GOODBYE;
         printf("Sending signal to kill all child processes ...\n");
         kill_All();
-        this_thread::sleep_for(chrono::milliseconds(800));
+        Sleep(1);
+        //this_thread::sleep_for(chrono::milliseconds(800));
         exit(0);
     }
 
@@ -194,7 +215,9 @@ void runable(string command)
     else
     {
         printf("Illegal command!\n");
+        command.append(" -> Illegal command");
     }
+    history.push_back(command);
 }
 
 void run(string command)
@@ -206,7 +229,6 @@ void run(string command)
         runable(trim(jobs[i]));
     }
 }
-
 int main()
 {
     WELCOME();
@@ -222,6 +244,7 @@ int main()
             GOODBYE();
             printf("Sending signal to kill all child processes ...\n");
             kill_All();
+            this_thread::sleep_for(chrono::milliseconds(1500));
             break;
         }
         else
@@ -231,4 +254,143 @@ int main()
     }
     
 }
+void time1()
+{
+    int sec_prev=0; 
+    while(1)
+    {
+        int seconds, minutes, hours;
+        string str;
 
+        //storing total seconds
+        time_t total_seconds=time(0);
+
+        //getting values of seconds, minutes and hours
+        struct tm* ct = localtime(&total_seconds);
+
+        seconds=ct->tm_sec;
+        minutes=ct->tm_min;
+        hours=ct->tm_hour;
+
+        //converting it into 12 hour format
+        /*if(hours>=12)
+            str="PM";
+        else
+            str="AM";
+        hours=hours>12?hours-12:hours;  */
+
+
+        //printing the result
+        if(seconds==sec_prev+1 || (sec_prev==59 && seconds==0))
+        {
+            cout << '\r';
+            cout<< (hours<10?"0":"") << hours <<":" << (minutes<10?"0":"") << minutes << ":" << (seconds<10?"0":"") << seconds << " " << str;
+        }
+
+        sec_prev=seconds;
+
+    }
+}
+
+void date()
+{
+    int sec_prev=0; //save previous second
+    while(1){
+        int seconds, minutes, hours;
+        int days, months, years;
+        int weekdays;
+        string wday[] = {            
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        };
+        string str;
+
+        //storing total seconds
+        time_t total_seconds=time(0);
+
+        //getting values of seconds, minutes and hours
+        struct tm* ct = localtime(&total_seconds);
+
+        seconds=ct->tm_sec;
+        minutes=ct->tm_min;
+        hours=ct->tm_hour;
+        days = ct->tm_mday;
+        months = ct->tm_mon + 1;
+        years = ct ->tm_year + 1900;    //in struct ct, tm_year beginning at 1900
+        weekdays = ct->tm_wday; //beginning at Sunday
+
+        //converting it into 12 hour format
+        if(hours>=12)
+            str="PM";
+        else
+            str="AM";
+        hours=hours>12?hours-12:hours;
+
+        //printing the result
+        if(seconds==sec_prev+1 || (sec_prev==59 && seconds==0))
+        {
+            cout << '\r';
+            cout << wday[weekdays] << " ";
+            cout<< (hours<10?"0":"") << hours <<":" << (minutes<10?"0":"") << minutes << ":" << (seconds<10?"0":"") << seconds << " " << str;
+            cout<<'\t' <<(days<10?"0":"") << days <<"/" << (months<10?"0":"") << months << "/" << (years<10?"0":"") << years;
+        }
+
+        sec_prev=seconds;
+
+    }
+}
+    
+void time2()
+{
+    int sec_prev = 0;
+    while (1)
+    {
+        int seconds, minutes, hours;
+        string str;
+
+        time_t total_seconds = time(0);            // storing total seconds
+        struct tm *ct = localtime(&total_seconds); // getting values of seconds, minutes and hours
+
+        seconds = ct->tm_sec;
+        minutes = ct->tm_min;
+        hours = ct->tm_hour;
+
+        //printing the result
+
+        if (seconds == sec_prev + 1 || (sec_prev == 59 && seconds == 0))
+        {
+            system("cls");
+            cout << "       ,--.-----.--." << endl;
+            cout << "       |--|-----|--|" << endl;
+            cout << "       |--|     |--|" << endl;
+            cout << "       |  |-----|  |" << endl;
+            cout << "     _|--|     |--|_" << endl;
+            cout << "    /  |  |-----|  |  \\" << endl;
+            cout << "   /   \\__|-----|__/   \\" << endl;
+            cout << "  /   _____---_____   \\/\\" << endl;
+            cout << " /   /               \\   \\/" << endl;
+            cout << "{   /      ROLEX      \\   }" << endl;
+            cout << "|  {                   }  |-," << endl;
+
+            cout << (hours < 10 ? "|  |    0" : "|  |    ") << hours << (minutes < 10 ? " : 0" : " : ") << minutes
+                 << (seconds < 10 ? " : 0" : " : ") << seconds << "   |  | |" << endl;
+
+            cout << "|  {                   }  |-'" << endl;
+            cout << "{   \\                 /   }" << endl;
+            cout << " \\   `------___------'   /\\ " << endl;
+            cout << "  \\     _|-----|_     /\\/" << endl;
+            cout << "   \\   /  |-----|  \\   /" << endl;
+            cout << "    \\  |--|     |--|  /" << endl;
+            cout << "     --|  |-----|  |--" << endl;
+            cout << "       |--|     |--|" << endl;
+            cout << "       |--|-----|--|" << endl;
+            cout << "       `--'-----`--'" << endl;
+        }
+        sec_prev = seconds;
+    }
+}

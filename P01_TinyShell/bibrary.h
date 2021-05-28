@@ -55,7 +55,7 @@ void help()
          << "Display clock\n";
     cout.width(20);
     cout << left << "8. countdown"
-         << "Display countdown clock, add fore or back mode, example: countdown fore, countdown back\n";
+         << "Display countdown clock, add fore or back mode, ex: countdown fore, countdown back\n";
     cout.width(20);
     cout << left << "9. dir"
          << "Display list of files in parent directory\n";
@@ -76,7 +76,7 @@ void help()
          << "Display list of processes\n";
     cout.width(20);
     cout << left << "15. notepad"
-         << "Open system notepad, add fore or back mode, example: notepad fore, notepad back\n";
+         << "Open system notepad, add fore or back mode, ex: notepad fore, notepad back\n";
     cout.width(20);
     cout << left << "16. path of *.exe"
          << "Run *.exe file, add fore or back mode\n";
@@ -88,7 +88,7 @@ void help()
          << "Stop a running process\n";
     cout.width(20);
     cout << left << "19. env a"
-    	 << "Display the value of the environment variable a. Ex: env path\n";
+    	 << "Display the value of the environment variable a, ex: env path\n";
     cout.width(20);
     cout << left << "" << "If a = null, display all the environment variables and their values\n";
     cout.width(20);
@@ -225,7 +225,6 @@ void openInBackOrFore(const string &command, const string &s)
 
 void openProcessInForeGround(const string &s)
 {
-
     PROCESS_INFORMATION pi;                 // lpStartupInfo    // lpProcessInformation
     STARTUPINFO si = {sizeof(STARTUPINFO)}; // cpp string must be modified to use in c
     LPSTR cString = strdup(s.c_str());
@@ -397,7 +396,7 @@ void runExe(string command)
     }
     else if (c2.compare("fore") == 0)
     {
-        openProcessInForeGround(c2);
+        openProcessInForeGround(c1);
     }
     else
     {

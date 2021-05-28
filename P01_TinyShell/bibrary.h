@@ -98,7 +98,7 @@ void help()
     cout << left << "22. history"
     	 << "Print all used commands\n";
     cout.width(20);
-    cout << left << "23. Clean"
+    cout << left << "23. clean"
     	 << "Clean the history\n";
 }
 

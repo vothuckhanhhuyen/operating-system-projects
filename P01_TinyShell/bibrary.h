@@ -355,7 +355,7 @@ void cd(string s)
     int ch = chdir(cString);           // if the change of directory was successful it will print successful otherwise it will print not successful
     if (ch < 0)
     {
-        openInBackOrFore("path background", cString);
+        openInBackOrFore("path back", cString);
     }
     else
     {

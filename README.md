@@ -5,8 +5,8 @@ This repo contains 3 projects in Operating System Subject at Hanoi University of
 
 ## Contribute
 Class: Talented in Computer Science - K64
-+ Trần Trọng Hiệp
 + Tạ Hữu Bình
++ Trần Trọng Hiệp
 + Lê Huy Hoàng
 + Võ Thục Khánh Huyền
 

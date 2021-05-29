@@ -220,9 +220,12 @@ void runable(string command)
 		del_env(envname);
 	}
 	
-     else if (command.find(".exe") != std::string::npos) {
+    else if (command.find(".exe") != std::string::npos) {
     	runExe(command);
     }
+    
+    else if(command.length() == 0) {
+	} 
     
     else
     {

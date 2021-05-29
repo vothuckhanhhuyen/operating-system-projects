@@ -28,7 +28,7 @@ void help()
 {
     // Display all commands
 
-	printf("-----------------------------------------------------------------------------------------------------------------------\n");
+	printf("\n------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 	cout << "For more information on a specific command, type help command-name\n";
     cout.width(20);
     cout << left << "1.  help"
@@ -52,11 +52,11 @@ void help()
     cout << left << "7.  clock"
          << "Display clock\n";
     cout.width(20);
-    cout << left << "8.  notepad"
-         << "Open system notepad, add fore or back mode, example: notepad fore, notepad back\n";
-    cout.width(20);
-    cout << left << "9.  countdown"
+    cout << left << "8.  countdown"
          << "Display countdown clock, add fore or back mode, example: countdown fore, countdown back\n";
+    cout.width(20);
+    cout << left << "9.  notepad"
+         << "Open system notepad, add fore or back mode, example: notepad fore, notepad back\n";
     cout.width(20);
     cout << left << "10. stop 'ID'"
          << "Stop a running process\n";
@@ -101,7 +101,7 @@ void help()
     cout.width(20);
     cout << left << "23. exit"
          << "Exit process\n";
-    printf("-----------------------------------------------------------------------------------------------------------------------\n");
+    printf("------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
 }
 
 void kill(string s)
@@ -327,7 +327,7 @@ void list1()
     //Track running process
 
     printf("\n");
-    printf("-----------------------------------------------------------------------------------------------------------------------\n");
+	printf("------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     printf("| Numbers            IdProcess                hProcess               Status                      Name   \n");
     for (int i = 1; i <= n; ++i)
     {
@@ -353,7 +353,7 @@ void list1()
         printf("|   %-19d%-26d%-20p%s          %s\n", i, pi[i].dwProcessId, pi[i].hProcess, a, cString[i]);
         }
     }
-    printf("-----------------------------------------------------------------------------------------------------------------------\n");
+    printf("------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     printf("\n");
 }
 

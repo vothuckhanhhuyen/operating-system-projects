@@ -102,7 +102,7 @@ void runable(string command)
     {
             print("Hello, countdown clock is running\n");
             string s = currentDirectory + "\\countDownClock.exe";
-            cout << s << endl;
+            // cout << s << endl;
             openInBackOrFore(command, s);
     }
 

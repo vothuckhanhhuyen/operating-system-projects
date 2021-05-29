@@ -210,6 +210,7 @@ void openInBackOrFore(const string &command, const string &s)
     void openProcessInForeGround(const string &s);
     void openProcessInBackGround(const string &s);
     stringstream cc(command);
+    cout << s << endl;
     string c1, c2;
     cc >> c1;
     cc >> c2;

@@ -115,7 +115,7 @@ Exmaple:
 
 *Syntax:*
 ```
->addenv a val
+>addenv (a) val
 ```
 + a and val is the name and value of variable you want to add.
 

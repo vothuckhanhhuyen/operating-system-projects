@@ -179,28 +179,36 @@ void runable(string command)
 		}
 	}
 	
-    else if (command.find("addenv ") != std::string::npos){
+    else if (command.find("addenv (") != std::string::npos){
 		int a;
-		for (int i = 7; i< command.length(); i++){
-			if(command[i] == ' '){
-				a = i + 1;
+		int b = 1;
+		for (int i = 8; i< command.length(); i++){
+			if(command[i] == '(') b ++;
+			if(command[i] == ')') b --;
+			if(b == 0) {
+				a = i + 2;
 				break;
 			}
 		}
-		if (a) {
-			char envname[a-7];
-		char envvalue[command.length() - a + 1];
-		for (int i = 7; i < a - 1; i++){
-			envname[i - 7] = command[i];
-		}
-		envname[a - 8] = '\0';
-		for (int i = a; i <= command.length(); i ++){
-			envvalue[i-a] = command[i];
-		}
-		add_env(envname, envvalue);
+		if(b > 0) {
+			cout << "Syntax error\n";
 		}
 		else {
-			cout << "Illegal command!\n";
+			if (command[a - 1] == ' ') {
+				char envname[a - 9];
+				char envvalue[command.length() - a + 1];
+				for (int i = 8; i < a - 2; i++){
+					envname[i - 8] = command[i];
+				}
+				envname[a - 10] = '\0';
+				for (int i = a; i <= command.length(); i ++){
+					envvalue[i-a] = command[i];
+				}
+				add_env(envname, envvalue);
+			}
+			else {
+				cout << "Illegal command!\n";
+			}	
 		}
 	}
 	

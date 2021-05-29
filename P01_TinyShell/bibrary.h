@@ -84,7 +84,7 @@ void help()
     cout.width(20);
     cout << left << "" << "If a = null, display all the environment variables and their values\n";
     cout.width(20);
-    cout << left << "18. addenv a b"
+    cout << left << "18. addenv (a) b"
     	 << "Add the environment variable a with its name b\n";
     cout.width(20);
     cout << left << "19. delenv a"

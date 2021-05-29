@@ -102,7 +102,6 @@ void runable(string command)
     {
             print("Hello, countdown clock is running\n");
             string s = currentDirectory + "\\countDownClock.exe";
-            // cout << s << endl;
             openInBackOrFore(command, s);
     }
 
@@ -163,7 +162,8 @@ void runable(string command)
     }
 
     else if (command.find(".bat") != std::string::npos) {
-    	runBat(command);
+    	string s = currentDirectory + "\\" + command;
+    	runBat(s);
     }
     
     else if (command[0] == 'e' && command[1] == 'n' && command[2] == 'v'){

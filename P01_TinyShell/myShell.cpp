@@ -16,7 +16,7 @@
 using namespace std;
 
 const string EXIT_COMMAND = "exit";
-string currentDirectory;
+string currentDirectory = "";
 vector<string> history;
 
 void runable(string command)
@@ -101,7 +101,9 @@ void runable(string command)
 	else if (command.compare("countdown fore") == 0 || command.compare("countdown back") == 0)
     {
             print("Hello, countdown clock is running\n");
-            openInBackOrFore(command, "countDownClock.exe");
+            string s = currentDirectory + "\\countDownClock.exe";
+            cout << s << endl;
+            openInBackOrFore(command, s);
     }
 
     else if (command.compare("list") == 0)
@@ -236,9 +238,15 @@ int main()
 {
     WELCOME();
     string command;
+    char *buffer1 = _getcwd(NULL, 0);
+    int i = 0;
+        while(buffer1[i] != '\0') {
+            currentDirectory += buffer1[i];
+            i++;
+        }
     while (true)
     {
-    	char *buffer = _getcwd(NULL, 0);
+    	char *buffer = _getcwd(NULL, 0);    
     	printf("%s", buffer);
         cout << ">";
         getline(cin, command);

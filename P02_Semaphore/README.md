@@ -9,8 +9,8 @@ Semaphore is a data structure that is useful for solving a variety of synchroniz
 
 ## Contribute
 Class: Talented in Computer Science - K64
-+ Trần Trọng Hiệp
 + Tạ Hữu Bình
++ Trần Trọng Hiệp
 + Lê Huy Hoàng
 + Võ Thục Khánh Huyền
 

@@ -114,7 +114,7 @@ void kill(string s)
             TerminateProcess(pi[i].hProcess, 0);
             CloseHandle(pi[i].hThread);
             CloseHandle(pi[i].hProcess);
-            cout << pi[i].hProcess << endl;
+            // cout << pi[i].hProcess << endl;
             printf("Process %s killed\n", cString[i]);
             for (int j = i; j < n; ++j)
             {
@@ -142,7 +142,7 @@ void kill_All()
         CloseHandle(pi[i].hThread);
         CloseHandle(pi[i].hProcess);
 
-        cout << pi[i].hProcess << endl;
+        // cout << pi[i].hProcess << endl;
     }
     printf("All process killed ...\n");
     n = 0;

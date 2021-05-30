@@ -306,7 +306,7 @@ void listOfCurrent()
         switch (errno)
         {
         case ENOENT:
-            system("dir");
+            printf("No such file or directory.\n");
             break;
         case EINVAL:
             printf("Invalid buffer.\n");
